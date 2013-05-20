@@ -26,7 +26,7 @@ abline(h = median(algae$NH4, na.rm = T), lty = 3)
 # oPO4 is the dependent variable
 lm(PO4 ~ oPO4, data = algae)
 
-
+# Fill in missing data points using k-nearest neighbors algorithm
 clean.algae <- knnImputation(algae, k = 10)
 
 # Create a multi-dimensional linear regression model where a1 is the 
